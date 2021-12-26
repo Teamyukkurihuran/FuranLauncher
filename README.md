@@ -1,1 +1,1 @@
-![Discord Banner 4](https://discordapp.com/api/guilds/780361750611886102/widget.png?style=banner4)
+<a href="https://discord.gg/D4UDvcr8Bm"><img src="https://discordapp.com/api/guilds/780361750611886102/widget.png?style=banner4" alt="Discord Banner 4"/></a>
