@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 // Requirements
 const request = require('request')
 
