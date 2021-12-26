@@ -190,7 +190,7 @@ Please give credit to the original author and provide a link to the original sou
 
 The best way to contact the developers is on Discord.
 
-[![discord](https://discordapp.com/api/guilds/211524927831015424/embed.png?style=banner3)][discord]
+[![discord](https://discordapp.com/api/guilds/780361750611886102/embed.png?theme=dark)][discord]
 
 ---
 
