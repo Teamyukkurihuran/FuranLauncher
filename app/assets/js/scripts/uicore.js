@@ -42,11 +42,11 @@ if(!isDev){
     ipcRenderer.on('autoUpdateNotification', (event, arg, info) => {
         switch(arg){
             case 'checking-for-update':
-                loggerAutoUpdater.log('Checking for update..')
-                settingsUpdateButtonStatus('Checking for Updates..', true)
+                loggerAutoUpdater.log('アップデートを確認中..')
+                settingsUpdateButtonStatus('アップデートを確認中..', true)
                 break
             case 'update-available':
-                loggerAutoUpdaterSuccess.log('New update available', info.version)
+                loggerAutoUpdaterSuccess.log('アップデートがあります。', info.version)
                 
                 if(process.platform === 'darwin'){
                     info.darwindownload = `https://github.com/Teamyukkurihuran/FuranLauncher/releases/download/v${info.version}/furanlauncher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : ''}.dmg`
@@ -56,8 +56,8 @@ if(!isDev){
                 populateSettingsUpdateInformation(info)
                 break
             case 'update-downloaded':
-                loggerAutoUpdaterSuccess.log('Update ' + info.version + ' ready to be installed.')
-                settingsUpdateButtonStatus('Install Now', false, () => {
+                loggerAutoUpdaterSuccess.log('バージョン ' + info.version + ' にアップデートできます。')
+                settingsUpdateButtonStatus('インストール', false, () => {
                     if(!isDev){
                         ipcRenderer.send('autoUpdateAction', 'installUpdateNow')
                     }
@@ -65,8 +65,8 @@ if(!isDev){
                 showUpdateUI(info)
                 break
             case 'update-not-available':
-                loggerAutoUpdater.log('No new update found.')
-                settingsUpdateButtonStatus('Check for Updates')
+                loggerAutoUpdater.log('アップデートを確認する')
+                settingsUpdateButtonStatus('アップデートを確認する')
                 break
             case 'ready':
                 updateCheckListener = setInterval(() => {
@@ -77,17 +77,17 @@ if(!isDev){
             case 'realerror':
                 if(info != null && info.code != null){
                     if(info.code === 'ERR_UPDATER_INVALID_RELEASE_FEED'){
-                        loggerAutoUpdater.log('No suitable releases found.')
+                        loggerAutoUpdater.log('適切なリリースが見つかりませんでした。')
                     } else if(info.code === 'ERR_XML_MISSED_ELEMENT'){
-                        loggerAutoUpdater.log('No releases found.')
+                        loggerAutoUpdater.log('リリースがありません。')
                     } else {
-                        loggerAutoUpdater.error('Error during update check..', info)
-                        loggerAutoUpdater.debug('Error Code:', info.code)
+                        loggerAutoUpdater.error('アップデートチェック時のエラー..', info)
+                        loggerAutoUpdater.debug('エラーコード:', info.code)
                     }
                 }
                 break
             default:
-                loggerAutoUpdater.log('Unknown argument', arg)
+                loggerAutoUpdater.log('無効な引数', arg)
                 break
         }
     })
