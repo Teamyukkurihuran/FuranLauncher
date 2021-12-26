@@ -1,1 +1,1 @@
-<iframe src="https://discordapp.com/widget?id=780361750611886102&theme=dark" width="350" height="500" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+![Discord Banner 4](https://discordapp.com/api/guilds/780361750611886102/widget.png?style=banner4)
