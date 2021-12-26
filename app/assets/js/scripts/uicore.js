@@ -49,7 +49,7 @@ if(!isDev){
                 loggerAutoUpdaterSuccess.log('アップデートがあります。', info.version)
                 
                 if(process.platform === 'darwin'){
-                    info.darwindownload = `https://github.com/Teamyukkurihuran/FuranLauncher/releases/download/v${info.version}/furanlauncher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : ''}.dmg`
+                    info.darwindownload = `https://github.com/Teamyukkurihuran/FuranLauncher/releases/download/v${info.version}/Furan-Launcher-setup-${info.version}${process.arch === 'arm64' ? '-arm64' : ''}.dmg`
                     showUpdateUI(info)
                 }
                 
